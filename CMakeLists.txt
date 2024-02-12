@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.13)
 project (gchp_ctm
-  VERSION 14.2.3
+  VERSION 14.3.0
   LANGUAGES Fortran CXX C
 )
 
@@ -61,7 +61,7 @@ ecbuild_declare_project()
 find_package(MPI REQUIRED COMPONENTS C CXX Fortran)
 
 if("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "GNU")
-  list(APPEND CMAKE_Fortran_FLAGS "-ffree-line-length-none")
+  set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -ffree-line-length-none")
 endif()
 
 set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/mod)

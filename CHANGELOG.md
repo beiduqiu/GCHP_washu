@@ -7,6 +7,20 @@ This file documents all notable changes to the GCHP wrapper repository starting 
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [14.3.0] - 2024-02-07
+### Added
+- Added capability for TOMAS simulations in GCHP
+- Added Cloud-J as submodule within GCHP_GridComp directory
+- Added compile option FASTJX to use legacy Fast-JX to compute J-values in GEOS-Chem instead of Cloud-J (required for mercury simulation)
+
+### Changed
+- Updated GEOS-Chem submodule to 14.3.0
+- Updated HEMCO submodule to 3.8.0
+
+### Fixed
+- Avoid semicolon in `CMAKE_ Fortran_FLAGS` variable when additional flags are passed to `cmake`
+- Updated debugging guide with clearer examples
+
 ## [14.2.3] - 2023-12-01
 ### Added
 - Script `.release/changeVersionNumbers.sh` to change version numbers before a new GCHP release
@@ -78,7 +92,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 - Removed memory leaks in GEOS-Chem and HEMCO submodule code
 - Units for State_Diag%RxnRate diagnostic are now `molec cm-3 s-1` instead of `s-1`
-
 
 ## [14.0.1] - 2022-10-31
 ### Changed
